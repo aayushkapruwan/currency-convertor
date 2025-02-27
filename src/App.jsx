@@ -8,14 +8,15 @@ function App() {
   const [fromSelectedCurrency, setfromSelectedCurrency] = useState("USD");
   const [toSelectedCurrency, settoSelectedCurrency] = useState("USD");
   /***************************************************************** */
-  const currencyRates = usecurencyRates(fromSelectedCurrency);
-  const options = Object.keys(currencyRates);
-  const currencyRates2 = usecurencyRates(toSelectedCurrency);
-  const options2 = Object.keys(currencyRates2);
+  const currencyRatesto = usecurencyRates(fromSelectedCurrency);
+  const optionsto = Object.keys(currencyRatesto);
+  /******************************************************************** */
+  const currencyRatesfrom = usecurencyRates(toSelectedCurrency);
+  const optionsfrom = Object.keys(currencyRatesfrom);
   /******************************************************************** */
 
   const convert = () => {
-    setConvertedAmount(convertingAmount * currencyRates[toSelectedCurrency]);
+    setConvertedAmount(convertingAmount * currencyRatesto[toSelectedCurrency]);
   };
 
   return (
@@ -30,7 +31,7 @@ function App() {
             selectedcurrency={fromSelectedCurrency}
             setSelectedCurrency={setfromSelectedCurrency}
             disabled={false}
-            currencyoptions={options2}
+            currencyoptions={optionsfrom}
           />
           <Inputx
             label="To"
@@ -39,7 +40,7 @@ function App() {
             selectedcurrency={toSelectedCurrency}
             setSelectedCurrency={settoSelectedCurrency}
             disabled={true}
-            currencyoptions={options}
+            currencyoptions={optionsto}
           />
           <button
             className="bg-sky-700 text-amber-50 p-2 rounded-2xl"
