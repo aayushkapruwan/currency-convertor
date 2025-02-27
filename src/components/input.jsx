@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Inputx({
   label,
-  amount = 0,
-  setAmount = () => {},
-  selectedcurrency = "usd",
-  setSelectedCurrency = () => {},
+  amount ,
+  setAmount ,
+  selectedcurrency ,
+  setSelectedCurrency ,
   disabled,
   currencyoptions = [],
 }) {

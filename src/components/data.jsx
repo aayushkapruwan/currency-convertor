@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+
 function usecurencyRates(currency) {
   const [data, setData] = useState({});
 
@@ -8,7 +9,7 @@ function usecurencyRates(currency) {
       .then((res) => res.json())
       .then((res) => setData(res['rates']))
       .catch((rej) => console.log(rej));
-  }, [currency]);
+  }, [currency,]);
 
   return data;
 }

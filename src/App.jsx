@@ -10,6 +10,8 @@ function App() {
   /***************************************************************** */
   const currencyRates = usecurencyRates(fromSelectedCurrency);
   const options = Object.keys(currencyRates);
+  const currencyRates2 = usecurencyRates(toSelectedCurrency);
+  const options2 = Object.keys(currencyRates2);
   /******************************************************************** */
 
   const convert = () => {
@@ -28,7 +30,7 @@ function App() {
             selectedcurrency={fromSelectedCurrency}
             setSelectedCurrency={setfromSelectedCurrency}
             disabled={false}
-            currencyoptions={options}
+            currencyoptions={options2}
           />
           <Inputx
             label="To"
@@ -44,7 +46,7 @@ function App() {
             type="button"
             onClick={convert}
           >
-            Convert
+            Convert {fromSelectedCurrency}  to {toSelectedCurrency}
           </button>
         </div>
       </div>
